@@ -1,15 +1,15 @@
-alter table user
-    add (shared_all_libraries boolean not null default true);
+ALTER TABLE "user"
+    ADD COLUMN shared_all_libraries BOOLEAN NOT NULL DEFAULT TRUE;
 
-create table user_library_sharing
+CREATE TABLE IF NOT EXISTS user_library_sharing
 (
-    user_id    bigint not null,
-    library_id bigint not null,
-    primary key (user_id, library_id)
+    user_id    BIGINT NOT NULL,
+    library_id BIGINT NOT NULL,
+    PRIMARY KEY (user_id, library_id)
 );
 
-alter table user_library_sharing
-    add constraint fk_user_library_sharing_library_id foreign key (library_id) references library (id);
+ALTER TABLE user_library_sharing
+    ADD CONSTRAINT fk_user_library_sharing_library_id FOREIGN KEY (library_id) REFERENCES library (id);
 
-alter table user_library_sharing
-    add constraint fk_user_library_sharing_user_id foreign key (user_id) references user (id);
+ALTER TABLE user_library_sharing
+    ADD CONSTRAINT fk_user_library_sharing_user_id FOREIGN KEY (user_id) REFERENCES "user" (id);

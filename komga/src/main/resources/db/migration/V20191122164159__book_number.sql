@@ -1,6 +1,6 @@
-alter table book
-    add (number float4 default 0);
-update book
-set number = (index + 1);
-alter table book
-    drop column index;
+ALTER TABLE book
+    ADD COLUMN number FLOAT4 DEFAULT 0;
+UPDATE book
+SET number = (index + 1);
+ALTER TABLE book
+    DROP COLUMN index;

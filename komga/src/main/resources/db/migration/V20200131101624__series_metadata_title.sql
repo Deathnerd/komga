@@ -1,18 +1,27 @@
-alter table series_metadata
-    add (
-        status_lock boolean default false,
-        title varchar,
-        title_lock boolean default false,
-        title_sort varchar,
-        title_sort_lock boolean default false
-        );
+ALTER TABLE series
+    ALTER COLUMN metadata_id SET NOT NULL;
+ALTER TABLE series_metadata
+    ADD COLUMN
+        status_lock BOOLEAN DEFAULT FALSE;
+ALTER TABLE series_metadata
+    ADD COLUMN
+        title VARCHAR;
+ALTER TABLE series_metadata
+    ADD COLUMN
+        title_lock BOOLEAN DEFAULT FALSE;
+ALTER TABLE series_metadata
+    ADD COLUMN
+        title_sort VARCHAR;
+ALTER TABLE series_metadata
+    ADD COLUMN
+        title_sort_lock BOOLEAN DEFAULT FALSE;
 
-update series_metadata m
-set m.title      = (select name from series where metadata_id = m.id),
-    m.title_sort = (select name from series where metadata_id = m.id);
+UPDATE series_metadata AS m
+SET title      = (SELECT name FROM series WHERE metadata_id = m.id),
+    title_sort = (SELECT name FROM series WHERE metadata_id = m.id);
 
-alter table series_metadata
-    alter column title set not null;
+ALTER TABLE series_metadata
+    ALTER COLUMN title SET NOT NULL;
 
-alter table series_metadata
-    alter column title_sort set not null;
+ALTER TABLE series_metadata
+    ALTER COLUMN title_sort SET NOT NULL;

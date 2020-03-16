@@ -3,6 +3,7 @@ package org.gotson.komga.domain.model
 import net.greypanther.natsort.CaseInsensitiveSimpleNaturalComparator
 import org.hibernate.annotations.Cache
 import org.hibernate.annotations.CacheConcurrencyStrategy
+import org.hibernate.annotations.Type
 import java.util.*
 import javax.persistence.Cacheable
 import javax.persistence.CollectionTable
@@ -35,6 +36,7 @@ class Media(
 
     @Column(name = "thumbnail")
     @Lob
+    @Type(type = "org.hibernate.type.BinaryType")
     var thumbnail: ByteArray? = null,
 
     pages: Iterable<BookPage> = emptyList(),

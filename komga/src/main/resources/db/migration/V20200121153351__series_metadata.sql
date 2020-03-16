@@ -1,15 +1,14 @@
-create table series_metadata
+CREATE TABLE IF NOT EXISTS series_metadata
 (
-    id                 bigint    not null,
-    created_date       timestamp not null,
-    last_modified_date timestamp not null,
-    status             varchar   not null,
-    primary key (id)
+    id                 BIGINT    NOT NULL,
+    created_date       TIMESTAMP NOT NULL,
+    last_modified_date TIMESTAMP NOT NULL,
+    status             VARCHAR   NOT NULL,
+    PRIMARY KEY (id)
 );
 
-alter table series
-    add (metadata_id bigint);
+ALTER TABLE series
+    ADD COLUMN metadata_id BIGINT;
 
-alter table series
-    add constraint fk_series_series_metadata_metadata_id foreign key (metadata_id) references series_metadata (id);
-
+ALTER TABLE series
+    ADD CONSTRAINT fk_series_series_metadata_metadata_id FOREIGN KEY (metadata_id) REFERENCES series_metadata (id);

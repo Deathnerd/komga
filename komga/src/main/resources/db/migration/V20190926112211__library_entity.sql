@@ -1,18 +1,18 @@
-create table library
+CREATE TABLE IF NOT EXISTS library
 (
-    id                 bigint    not null,
-    created_date       timestamp not null,
-    last_modified_date timestamp not null,
-    name               varchar   not null,
-    root               varchar   not null,
-    primary key (id)
+    id                 BIGINT    NOT NULL,
+    created_date       TIMESTAMP NOT NULL,
+    last_modified_date TIMESTAMP NOT NULL,
+    name               VARCHAR   NOT NULL,
+    root               VARCHAR   NOT NULL,
+    PRIMARY KEY (id)
 );
 
-alter table library
-    add constraint uk_library_name unique (name);
+ALTER TABLE library
+    ADD CONSTRAINT uk_library_name UNIQUE (name);
 
-alter table serie
-    add (library_id bigint);
+ALTER TABLE serie
+    ADD COLUMN library_id BIGINT;
 
-alter table serie
-    add constraint fk_serie_library_library_id foreign key (library_id) references library (id);
+ALTER TABLE serie
+    ADD CONSTRAINT fk_serie_library_library_id FOREIGN KEY (library_id) REFERENCES library (id);

@@ -1,5 +1,7 @@
-update BOOK_METADATA
-set STATUS = 'UNKNOWN'
-where ID in (
-    SELECT ID FROM BOOK_METADATA where MEDIA_TYPE = 'application/pdf'
-    );
+UPDATE BOOK_METADATA
+SET STATUS = 'UNKNOWN'
+WHERE ID IN (
+    SELECT ID
+    FROM BOOK_METADATA
+    WHERE MEDIA_TYPE = 'application/pdf'
+);

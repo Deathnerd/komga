@@ -1,21 +1,21 @@
-create table user
+CREATE TABLE IF NOT EXISTS "user"
 (
-    id                 bigint    not null,
-    created_date       timestamp not null,
-    last_modified_date timestamp not null,
-    email              varchar   not null,
-    password           varchar   not null,
-    primary key (id)
+    id                 BIGINT    NOT NULL,
+    created_date       TIMESTAMP NOT NULL,
+    last_modified_date TIMESTAMP NOT NULL,
+    email              VARCHAR   NOT NULL,
+    password           VARCHAR   NOT NULL,
+    PRIMARY KEY (id)
 );
 
-alter table user
-    add constraint uk_user_login unique (email);
+ALTER TABLE "user"
+    ADD CONSTRAINT uk_user_login UNIQUE (email);
 
-create table user_role
+CREATE TABLE IF NOT EXISTS user_role
 (
-    user_id bigint not null,
-    roles   varchar
+    user_id BIGINT NOT NULL,
+    roles   VARCHAR
 );
 
-alter table user_role
-    add constraint fk_user_role_user_user_id foreign key (user_id) references user (id);
+ALTER TABLE user_role
+    ADD CONSTRAINT fk_user_role_user_user_id FOREIGN KEY (user_id) REFERENCES "user" (id);

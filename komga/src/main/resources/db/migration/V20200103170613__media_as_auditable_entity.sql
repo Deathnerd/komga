@@ -1,13 +1,13 @@
-alter table media
-    add (created_date timestamp);
-alter table media
-    add (last_modified_date timestamp);
+ALTER TABLE media
+    ADD COLUMN created_date TIMESTAMP;
+ALTER TABLE media
+    ADD COLUMN last_modified_date TIMESTAMP;
 
-update media
-set created_date       = CURRENT_TIMESTAMP(),
-    last_modified_date = CURRENT_TIMESTAMP();
+UPDATE media
+SET created_date       = CURRENT_TIMESTAMP,
+    last_modified_date = CURRENT_TIMESTAMP;
 
-alter table media
-    alter column created_date set not null;
-alter table media
-    alter column last_modified_date set not null;
+ALTER TABLE media
+    ALTER COLUMN created_date SET NOT NULL;
+ALTER TABLE media
+    ALTER COLUMN last_modified_date SET NOT NULL;

@@ -1,2 +1,2 @@
-alter table serie
-    alter column library_id set not null;
+ALTER TABLE serie
+    ALTER COLUMN library_id SET NOT NULL;

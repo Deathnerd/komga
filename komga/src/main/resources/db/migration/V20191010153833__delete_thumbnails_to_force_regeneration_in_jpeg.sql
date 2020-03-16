@@ -1,2 +1,2 @@
-update book_metadata
-set thumbnail = null;
+UPDATE book_metadata
+SET thumbnail = NULL;

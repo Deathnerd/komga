@@ -81,6 +81,7 @@ dependencies {
   implementation("com.jakewharton.byteunits:byteunits:0.9.1")
 
   runtimeOnly("com.h2database:h2")
+  runtimeOnly("org.postgresql:postgresql")
 
   testImplementation("org.springframework.boot:spring-boot-starter-test") {
     exclude(module = "mockito-core")

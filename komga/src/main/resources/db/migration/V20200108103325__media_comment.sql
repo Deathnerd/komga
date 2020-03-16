@@ -1,2 +1,2 @@
-alter table media
-    add (comment varchar);
+ALTER TABLE media
+    ADD COLUMN COMMENT VARCHAR;

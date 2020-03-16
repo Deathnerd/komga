@@ -1,2 +1,2 @@
-alter table book
-    alter column number set data type int;
+ALTER TABLE book
+    ALTER COLUMN number SET DATA TYPE INT;

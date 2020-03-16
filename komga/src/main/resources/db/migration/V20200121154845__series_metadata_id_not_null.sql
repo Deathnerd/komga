@@ -1,2 +1,2 @@
-alter table series
-    alter column metadata_id set not null;
+ALTER TABLE series
+    ALTER COLUMN metadata_id SET NOT NULL;

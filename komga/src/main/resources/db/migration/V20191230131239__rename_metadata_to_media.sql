@@ -1,25 +1,23 @@
-alter table book_metadata
-    rename to media;
+ALTER TABLE book_metadata
+    RENAME TO media;
 
-alter table book
-    alter column book_metadata_id
-        rename to media_id;
+ALTER TABLE book
+    RENAME COLUMN book_metadata_id TO media_id;
 
-alter table book
-    rename constraint uk_book_book_metadata_id to uk_book_media_id;
+ALTER TABLE book
+    RENAME CONSTRAINT uk_book_book_metadata_id TO uk_book_media_id;
 
-alter table book
-    rename constraint fk_book_book_metadata_book_metadata_id to fk_book_media_media_id;
+ALTER TABLE book
+    RENAME CONSTRAINT fk_book_book_metadata_book_metadata_id TO fk_book_media_media_id;
 
-alter table book_metadata_page
-    rename to media_page;
+ALTER TABLE book_metadata_page
+    RENAME TO media_page;
 
-alter table media_page
-    alter column book_metadata_id
-        rename to media_id;
+ALTER TABLE media_page
+    RENAME COLUMN book_metadata_id TO media_id;
 
-alter table media_page
-    rename constraint fk_book_metadata_page_book_metadata_book_metadata_id to fk_media_page_media_media_id;
+ALTER TABLE media_page
+    RENAME CONSTRAINT fk_book_metadata_page_book_metadata_book_metadata_id TO fk_media_page_media_media_id;
 
-alter index if exists uk_book_book_metadata_id_index_7 rename to uk_book_media_id_index_7;
-alter index if exists fk_book_metadata_page_book_metadata_book_metadata_id_index_9 rename to fk_media_page_media_media_id_index_9;
+ALTER INDEX IF EXISTS uk_book_book_metadata_id_index_7 RENAME TO uk_book_media_id_index_7;
+ALTER INDEX IF EXISTS fk_book_metadata_page_book_metadata_book_metadata_id_index_9 RENAME TO fk_media_page_media_media_id_index_9;

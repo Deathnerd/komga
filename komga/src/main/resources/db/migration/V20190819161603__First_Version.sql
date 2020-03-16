@@ -1,5 +1,3 @@
-create sequence hibernate_sequence start with 1 increment by 1;
-
 create table book
 (
     id                 bigint    not null,
@@ -19,7 +17,7 @@ create table book_metadata
     id         bigint  not null,
     media_type varchar,
     status     varchar not null,
-    thumbnail  blob,
+    thumbnail  bytea,
     primary key (id)
 );
 
