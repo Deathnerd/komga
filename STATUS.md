@@ -3,7 +3,7 @@
 Read first, update last. One screen. Older detail goes to adr/ or docs/, not here.
 
 ## Where we are
-- Phase: 0 (safety net) — not started. Repo setup PR: <link once open>.
+- Phase: 0 (safety net) — not started. Repo setup PR: https://github.com/Deathnerd/komga/pull/1
 - Based on upstream gotson/komga d512b67d0186b519f1fe70c5ff8fb09d6311e1fd (v1.26.3,
   upstream commit of 2026-09-07), synced 2026-09-10 via GitHub Sync fork. Fork master
   == upstream master, zero fork-only commits.
