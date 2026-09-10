@@ -10,7 +10,6 @@ on:
 
 jobs:
   lock:
-    if: github.repository == 'gotson/komga'
     runs-on: ubuntu-latest
     steps:
       - uses: dessant/lock-threads@v6

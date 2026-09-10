@@ -10,7 +10,6 @@ on:
 
 jobs:
   chromatic:
-    if: github.repository == 'gotson/komga'
     name: Run Chromatic
     runs-on: ubuntu-latest
     environment: chromatic
