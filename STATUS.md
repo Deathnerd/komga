@@ -12,8 +12,8 @@ Read first, update last. One screen. Older detail goes to adr/ or docs/, not her
 
 ## Last completed
 - Fork setup: CLAUDE.md, .claude/settings.json, ADR log (adr/0001), upstream policy,
-  CI guards on the 4 upstream release/publish workflows, dependabot muted,
-  docs/roadmap.md placeholder.
+  CI guards on the 4 upstream release/publish workflows and the 2 Chromatic
+  workflows, dependabot muted, docs/roadmap.md placeholder.
 
 ## Next step
 - Phase 0, session 1: build locally, understand the jOOQ/Flyway build step in
@@ -53,10 +53,9 @@ Read first, update last. One screen. Older detail goes to adr/ or docs/, not her
 - Tag branch `postgres` as archive/postgres-2020 (needs a local push; not cloud).
 - Branch protection on master after Phase 0 lands.
 - Enable GitHub Actions on the fork if CI is wanted (test-komga / test-webui /
-  test-nextui / chromatic / lock / browserlist-update are unguarded and will run
-  once Actions is on). chromatic and chromatic-pr need a CHROMATIC_PROJECT_TOKEN
-  secret on the fork or they will fail on next-ui changes; add one or accept the
-  red check.
+  test-nextui / lock / browserlist-update are unguarded and will run once Actions
+  is on). chromatic and chromatic-pr are guarded because they need a Chromatic
+  account and CHROMATIC_PROJECT_TOKEN; unguard them if that is ever set up.
 - From /project-onboard (agency plugin, "existing repo" delta) — all deferred because
   they add mechanisms, not content: mise.toml + scripts/check.sh (gate step),
   scripts/arch-gen.sh + docs/architecture/*.c4 (C4 model), .mcp.json,

@@ -53,11 +53,12 @@ All paths are relative to komga/src/main/kotlin/org/gotson/komga/.
 
 - Remote `upstream` = https://github.com/gotson/komga.git. Merging upstream is allowed
   until Phase 2 begins; afterwards cherry-pick only. See docs/upstream-policy.md.
-- Upstream's four release/publish workflows (release, dockerhub_description,
-  github-releases-to-discord, dispatch) are kept but guarded with
+- Upstream's release/publish workflows (release, dockerhub_description,
+  github-releases-to-discord, dispatch) and the two Chromatic workflows (need a
+  Chromatic account/token) are kept but guarded with
   `if: github.repository == 'gotson/komga'`; do not remove the guards or the files.
-  Every other upstream workflow (tests, lint, build, chromatic, lock, browserslist)
-  is unchanged and runs on the fork.
+  Every other upstream workflow (tests, lint, build, lock, browserslist) is
+  unchanged and runs on the fork.
 - Branch `postgres` is a 2020 JPA/H2-era experiment. Ignore it.
 
 ## Session protocol
