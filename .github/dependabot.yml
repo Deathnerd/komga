@@ -30,6 +30,7 @@ updates:
   # Maintain dependencies for GitHub Actions
   - package-ecosystem: "github-actions"
     directory: "/"
+    open-pull-requests-limit: 0
     commit-message:
       prefix: "deps(ci)"
     #      include: "scope"
