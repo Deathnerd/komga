@@ -1,0 +1,10 @@
+{
+  "extraKnownMarketplaces": {
+    "infinite-room-labs": {
+      "source": { "source": "github", "repo": "InfiniteRoomLabs/agent-ops" }
+    }
+  },
+  "enabledPlugins": {
+    "agency@infinite-room-labs": true
+  }
+}

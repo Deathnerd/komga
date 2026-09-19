@@ -8,6 +8,7 @@ on:
 
 jobs:
   dispatch:
+    if: github.repository == 'gotson/komga'
     runs-on: ubuntu-latest
     steps:
       - name: Repository Dispatch
